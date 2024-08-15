@@ -64,7 +64,7 @@ function SignUpConfirmationPage() {
                 navigate("/")
 
                 /* 
-                In this block, login user already was their account was confirmed.
+                In this block, login user already was their account was confirmed. confusion
                 */
             }
 
