@@ -22,9 +22,11 @@ const SignUpForm = () => {
                 body: JSON.stringify(email, name, password),
             });
 
-            localStorage.setItem('signupStatus', 'success');
+            localStorage.setItem("username", name);
 
-            navigate('/confirmation')
+            const url = response.data;
+            navigate(url);
+
             setMessage(response.data);
         } catch (error) {
             setMessage('Form submission failed');

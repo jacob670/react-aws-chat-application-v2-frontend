@@ -18,7 +18,8 @@ root.render(
       <Route path="/" element={<Home />} />
       <Route path="login" element={<LoginForm />} />
       <Route path="signup" element={<SignUpForm />} />
-      <Route path="/confirmation" element={<SignUpConfirmationPage />} />
+      <Route path="signup/confirm/:token" element={<SignUpConfirmationPage />} />
+      {/* <Route path="/confirmation" element={<SignUpConfirmationPage />} /> */}
     </Routes>
   </Router>
 );
