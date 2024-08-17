@@ -6,8 +6,9 @@ import { Link, useNavigate } from 'react-router-dom';
 const SignUpForm = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
-    const [password, setPassword] = useState('')
+    const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [userMessage, setUserMessage] = useState('');
 
     const navigate = useNavigate();
 
@@ -26,9 +27,9 @@ const SignUpForm = () => {
                 })
             });
 
-            localStorage.setItem("username", name);
-
             const url = response.data;
+
+            localStorage.setItem("username", name);
             navigate(url);
 
         } catch (error) {
@@ -36,8 +37,12 @@ const SignUpForm = () => {
             if (error.response) {
                 if (error.response.status === 400) {
                     setMessage("Invalid password was entered. Please have 8 CHARACTERS MINIMUM, 1 UPPER & 1 LOWER, 1 NUMBER, 1 SPECIAL CHARACTER");
+                    setUserMessage(' ');
+                } else if (error.response.status === 409) {
+                    setUserMessage('The username already exists');
+                    setMessage(" ");
                 } else {
-                    setMessage('Error: ' + error.response.statusText);
+                    setMessage('Error: ' + error.response.message);
                 }
             }
         }
@@ -62,6 +67,7 @@ const SignUpForm = () => {
                         <input type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
                     </div>
                     {message && <p style={{ color: 'red' }}>{message}</p>}
+                    {userMessage && <p style={{ color: 'red' }}>{userMessage}</p>}
                     <button>Sign up</button>
                 </form>
             </div>
