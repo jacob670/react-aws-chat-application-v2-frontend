@@ -52,7 +52,6 @@ function SignUpConfirmationPage() {
                 })
             });
 
-            // little bug i dont even know
             if (response.status === 200 ) {
                 console.log(response.data);
                 console.log(confirmationCode)
