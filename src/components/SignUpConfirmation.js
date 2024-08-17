@@ -3,6 +3,8 @@ import axios from 'axios';
 import './SignUpConfirmationCode.css'
 import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
 
+
+
 function SignUpConfirmationPage() {
     const location = useLocation();
     const navigate = useNavigate();
@@ -38,7 +40,6 @@ function SignUpConfirmationPage() {
         console.log("Form submit handler triggered:", token);
 
         const username = localStorage.getItem("username");
-        
 
         try {
             const response = await axios.post(`http://localhost:8083/api/auth/confirmSignUp/${token}`, { confirmationCode, username }, {
@@ -51,25 +52,23 @@ function SignUpConfirmationPage() {
                 })
             });
 
-            if (!response.ok) {
-                setErrorMessage("Invalid Confirmation Code Entered. Please Try Again")
-            } else {
+            // little bug i dont even know
+            if (response.status === 200 ) {
                 console.log(response.data);
                 console.log(confirmationCode)
-    
     
                 localStorage.removeItem("confirmationToken");
                 localStorage.removeItem("username");
     
-                navigate("/")
+                navigate("/");
 
-                /* 
-                In this block, login user already was their account was confirmed. confusion
-                */
+            } else {
+                console.log("i dont know")
             }
 
 
         } catch (error) {
+            setErrorMessage("Invalid Confirmation Code Entered. Please Try Again")
             console.log(error);
         }
     };

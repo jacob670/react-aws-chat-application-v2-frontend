@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AccountForm.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const LoginForm = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const location = useLocation();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
