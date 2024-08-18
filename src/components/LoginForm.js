@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AccountForm.css'
-import { Link, useLocation } from 'react-router-dom';
+import { json, Link, useLocation, useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const [name, setName] = useState('');
@@ -9,15 +9,34 @@ const LoginForm = () => {
     const [message, setMessage] = useState('');
     const location = useLocation();
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             const response = await axios.post('http://localhost:8083/api/auth/loginRequest', { name, password }, {
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                body: JSON.stringify({
+                    name: name,
+                    password: password
+                })
             });
-            setMessage(response.data);
+
+
+            const { accessToken, idToken, refreshToken, expiresIn } = response.data;
+
+            sessionStorage.setItem("accessToken", accessToken);
+            sessionStorage.setItem("idToken", idToken);
+            sessionStorage.setItem("refreshToken", refreshToken);
+            // sessionStorage.setItem("expiresIn", e);
+
+            //navigate('/')
+            
+
+
+
         } catch (error) {
             setMessage('Form submission failed');
         }
