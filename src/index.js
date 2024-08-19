@@ -9,7 +9,7 @@ import LoginForm from './components/LoginForm';
 import Home from './components/Home';
 import SignUpForm from './components/SignUpForm';
 import SignUpConfirmationPage from './components/SignUpConfirmation';
-
+import ChatRoom from './components/ChatRoom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +20,7 @@ root.render(
       <Route path="signup" element={<SignUpForm />} />
       <Route path="signup/confirm/:token" element={<SignUpConfirmationPage />} />
       {/* <Route path="/confirmation" element={<SignUpConfirmationPage />} /> */}
+      <Route path="/chat" element={<ChatRoom />} />
     </Routes>
   </Router>
 );

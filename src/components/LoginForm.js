@@ -30,9 +30,8 @@ const LoginForm = () => {
             sessionStorage.setItem("accessToken", accessToken);
             sessionStorage.setItem("idToken", idToken);
             sessionStorage.setItem("refreshToken", refreshToken);
-            // sessionStorage.setItem("expiresIn", e);
 
-            //navigate('/')
+            navigate('/chat')
             
 
 
