@@ -31,11 +31,8 @@ const LoginForm = () => {
             sessionStorage.setItem("idToken", idToken);
             sessionStorage.setItem("refreshToken", refreshToken);
 
-            navigate('/chat')
+            navigate('/quickChats')
             
-
-
-
         } catch (error) {
             setMessage('Form submission failed');
         }

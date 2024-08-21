@@ -10,6 +10,8 @@ import Home from './components/Home';
 import SignUpForm from './components/SignUpForm';
 import SignUpConfirmationPage from './components/SignUpConfirmation';
 import ChatRoom from './components/ChatRoom';
+import AuthenticatedHomePage from './components/AuthenticatedHome';
+import ProtectedRoute from './components/ProtectedRoutes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +21,17 @@ root.render(
       <Route path="login" element={<LoginForm />} />
       <Route path="signup" element={<SignUpForm />} />
       <Route path="signup/confirm/:token" element={<SignUpConfirmationPage />} />
-      {/* <Route path="/confirmation" element={<SignUpConfirmationPage />} /> */}
+      {/* <Route path="quickChats" element={<AuthenticatedHomePage />} /> */}
+      {/* Protected Routes */}
+      <Route element={<ProtectedRoute />}>
+          <Route path="/quickChats" element={<AuthenticatedHomePage />} />
+          {/* Add more protected routes here */}
+        </Route>
+
+
+
+
+
       <Route path="/chat" element={<ChatRoom />} />
     </Routes>
   </Router>

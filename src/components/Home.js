@@ -5,18 +5,19 @@ import { getUserName } from './userService';
 
 const Home = () => {
     const [userName, setUserName] = useState('');
-    useEffect(() => {
-        const fetchUserName = async () => {
-          try {
-            const name = await getUserName();
-            setUserName(name);
-          } catch (error) {
-            console.error('Failed to fetch user name:', error);
-          }
-        };
+
+    // useEffect(() => {
+    //     const fetchUserName = async () => {
+    //       try {
+    //         const name = await getUserName();
+    //         setUserName(name);
+    //       } catch (error) {
+    //         console.error('Failed to fetch user name:', error);
+    //       }
+    //     };
     
-        fetchUserName();
-      }, []);
+    //     fetchUserName();
+    //   }, []);
     
 
 
@@ -27,14 +28,6 @@ const Home = () => {
             <div className='title'>
                 <h1>Welcome to QuickChats!</h1>
             </div>
-
-            <div>
-      {userName ? (
-        <p>Welcome, {userName}!</p>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
 
             <div className='about'>
                 <p>QuickChats is an application that allows users to chat and communicate with each other. The frontend of this app was developed in
