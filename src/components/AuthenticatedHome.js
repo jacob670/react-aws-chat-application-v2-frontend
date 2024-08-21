@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './css/AuthenticatedPages/Home.css';
-
-
-
-
+import './css/AuthenticatedPages/styles.css';
 import { json, Link, useLocation, useNavigate } from 'react-router-dom';
 import { getUserName } from './userService'; 
 
@@ -28,10 +24,21 @@ const AuthenticatedHomePage = () => {
 
 
     return (
-        <div className='home-container'>
+        <div className='container'>
 
-            <div className='title'>
-                <p>Welcome back to QuickChats <span style={wordStyle}>{userName}!</span></p>
+            <div class='header'>
+                <h1>Welcome back to QuickChats <span style={wordStyle}>{userName}!</span></h1>
+            </div>
+
+            <div class='button-container'>
+            <Link to="/chat">
+          <button class="option-butt">Simple Chat Room</button>
+          </Link>
+
+          <Link to="/chat">
+          <button class="option-butt">Simple Chat Room</button>
+          </Link>
+
             </div>
 
 

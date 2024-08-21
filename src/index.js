@@ -21,18 +21,14 @@ root.render(
       <Route path="login" element={<LoginForm />} />
       <Route path="signup" element={<SignUpForm />} />
       <Route path="signup/confirm/:token" element={<SignUpConfirmationPage />} />
-      {/* <Route path="quickChats" element={<AuthenticatedHomePage />} /> */}
+
+
       {/* Protected Routes */}
       <Route element={<ProtectedRoute />}>
           <Route path="/quickChats" element={<AuthenticatedHomePage />} />
+          <Route path="/chat" element={<ChatRoom />} />
           {/* Add more protected routes here */}
         </Route>
-
-
-
-
-
-      <Route path="/chat" element={<ChatRoom />} />
     </Routes>
   </Router>
 );

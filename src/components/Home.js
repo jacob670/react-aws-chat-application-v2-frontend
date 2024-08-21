@@ -1,27 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Home.css'
-import { getUserName } from './userService'; 
 
 const Home = () => {
-    const [userName, setUserName] = useState('');
-
-    // useEffect(() => {
-    //     const fetchUserName = async () => {
-    //       try {
-    //         const name = await getUserName();
-    //         setUserName(name);
-    //       } catch (error) {
-    //         console.error('Failed to fetch user name:', error);
-    //       }
-    //     };
-    
-    //     fetchUserName();
-    //   }, []);
-    
-
-
-
     return (
         <div className='home-container'>
 
