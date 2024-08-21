@@ -7,14 +7,16 @@ export const getUserName = async () => {
         console.log('no token');
     }
 
-        const response = await fetch('http://localhost:8083/api/auth/getusername', {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${idToken}`,
-                'Content-Type': 'application/json'
-            }
-        });
+    const response = await fetch('http://localhost:8083/api/auth/getUserProperties', {
+        method: 'GET',
+        headers: {
+            'Authorization': idToken,
+            'Content-Type': 'application/json'
+        }
+    });
 
-        const userName = await response.text();
-        return userName;
+    const userDataJson = await response.text();
+    const user = JSON.parse(userDataJson);
+
+    return user.userName;
 }
