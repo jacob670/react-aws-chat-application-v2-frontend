@@ -2,30 +2,10 @@
 This is the client side application for the project QuickChats which used the framework React.
 The server side can be found here (https://github.com/jacob670/java-aws-chat-application-v2).
 
-## Available Scripts
+## QuickChats Features
+When authenticated, the user will be able to do countless things on the application
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
+### 'simple chat room'
+- This is simply a generic chat room where if they choose the option, they will be sent to a chat room where anyone
+on the server can access.
+- There will be no use of a database on this feature as the messages will just simply be gone after they leave
