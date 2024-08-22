@@ -6,6 +6,7 @@
     -moz-osx-font-smoothing: grayscale;
     background-color: #8BC6EC;
     background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  
 } 
 
 .header {
@@ -21,14 +22,14 @@
 
 
 .button-container {
-  position: fixed; /* Keep the container fixed relative to the viewport */
-  bottom: 50%; /* Position the container 70% from the bottom */
+  position: fixed;
+  bottom: 50%; 
   left: 50%;
-  transform: translateX(-50%); /* Center horizontally */
+  transform: translateX(-50%); 
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  align-items: center; /* Center buttons horizontally */
-  gap: 90px; /* Optional: Space between buttons */
+  flex-direction: column; 
+  align-items: center; 
+  gap: 90px; 
 }
 
 /*/* From Uiverse.io by vikiWayne */ 
@@ -49,7 +50,25 @@
   margin-top: 0px;
 }
 
-.option-butt:hover {
+.simple-chatroom-description {
+  position: absolute;
+  bottom: -100px; 
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: "Arsenal SC", sans-serif;
+  font-size: 25px;
+  color:white;
+  width: 1000px;
+}
+
+.button-container:hover .simple-chatroom-description {
+  opacity: 1;
+}
+
+
+.option-butt:hover{
   color: #ffffff;
   transform: scale(1.1);
   outline: 2px solid #70bdca;

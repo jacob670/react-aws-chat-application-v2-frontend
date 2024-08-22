@@ -24,6 +24,7 @@ const AuthenticatedHomePage = () => {
 
 
     return (
+      
         <div className='container'>
 
             <div class='header'>
@@ -35,10 +36,19 @@ const AuthenticatedHomePage = () => {
           <button class="option-butt">Simple Chat Room</button>
           </Link>
 
+
+          <div class="simple-chatroom-description">
+            This simple chat room allows anyone on the site to access it. 
+            In other words, anyone who will click this link can communicate with others on the same link!
+            </div>
+
+
+
+
+{/* 
           <Link to="/chat">
           <button class="option-butt">Simple Chat Room</button>
-          </Link>
-
+          </Link> */}
             </div>
 
 
