@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+.chat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-box {
+    width: 900px; 
+    height: 500px; 
+    background-color: #333333; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+    font-size: 16px; 
+    text-align: center; 
+    margin-top: 110px;
+    border-radius: 30px;
+
+    flex-direction: column; 
+
+    overflow-y: auto; /* Allow scrolling within the square container */
+    position: relative; /* Needed to position the input container correctly */
+}
+
+.hea {
+    text-decoration: none;
+    font-family: "Arsenal SC", sans-serif;
+    color: #333333;;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center; 
+    padding: 10px; 
+    font-size: 20px;
+}
+
+.hea:hover {
+    color: white;
+}
+
+/* From Uiverse.io by Maximinodotpy */ 
+.input-simple-message {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+
+    display: flex;
+    position: fixed;
+
+
+
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the input container horizontally */
+    width: 750px;
+  }
+  
+  .input-simple-message input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 20px;
+    background-color: #333333;
+    width: 100%;
+    color: white;
+    font-style: bold;
+    font-family: "Arsenal SC", sans-serif;
+    font-size: 20px;
+  }
+  
+  
+  .input-simple-message :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+  }
+  
+  .input-simple-message :is(input:focus, input:valid) {
+    border-color: rgb(150, 150, 200);
+  }
+
+  .input-simple-message button {
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+
+  .input-simple-message button:hover {
+background-color: rgb(150, 150, 200);
+  }
+
+  .mes-con {
+    border: 2px solid #dedede;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 300px;
+    height: 50px;
+    position: fixed;
+    text-align: left;
+    left: 40px;
+  }
+  

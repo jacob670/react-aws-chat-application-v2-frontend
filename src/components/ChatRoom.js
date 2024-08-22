@@ -2,6 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import SockJS from 'sockjs-client';
 import { Client } from '@stomp/stompjs';
 import { json, Link, useLocation, useNavigate } from 'react-router-dom';
+import { getUserName } from './userService';
+
+import './css/AuthenticatedPages/SimpleChatRoom.css';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
@@ -10,15 +13,11 @@ const ChatRoom = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [stompClient, setStompClient] = useState(null);
 
+  const [userName, setUserName] = useState('');
+
   const navigate = useNavigate();
 
   useEffect(() => {
-
-    // really basic version of if no token, cant be on this page
-    // will update this
-    if (sessionStorage.getItem('accessToken') === null) {
-        navigate('/')
-    }
     // setup server side
     const socket = new SockJS('http://localhost:8083/ws');
     const client = new Client({
@@ -42,6 +41,16 @@ const ChatRoom = () => {
     setStompClient(client);
     client.activate();
 
+    const fetchUserName = async () => {
+      try {
+        const name = await getUserName();
+        setUserName(name);
+      } catch (error) {
+        console.error('Failed to fetch user name:', error);
+      }
+    };
+    fetchUserName();
+
     return () => {
       client.deactivate();
     };
@@ -63,31 +72,50 @@ const ChatRoom = () => {
 
 
   return (
-    <div>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter your username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <ul>
-          {messages.map((message, index) => (
-            <li key={index}>
-              {message.sender}: {message.content}
-            </li>
+    <div class='chat-container'>
+
+      <Link to="/" class='hea'>
+        <h1>QuickChats!</h1>
+      </Link>
+
+
+      <div class="chat-box">
+        {/* <p>{userName} has joined to chat</p> */}
+
+
+
+        {messages.map((message, index) => (
+                  <div class="mes-con">
+          <h2>{userName}  
+            <p>{message.content}</p>
+          </h2>
+          </div>
           ))}
-        </ul>
-        <input
-          type="text"
-          placeholder="Enter your message"
-          value={inputMessage}
-          onChange={(e) => setInputMessage(e.target.value)}
-        />
-        <button onClick={sendMessage}>Send</button>
+
+          <span class="time-right">Time</span>
+
+
+
+
       </div>
+
+
+
+
+
+      <div class='input-simple-message'>
+          <input
+            type="text"
+            placeholder="Enter your message"
+            value={inputMessage}
+            onChange={(e) => setInputMessage(e.target.value)}
+          />
+
+          <button onClick={sendMessage}>Send</button>
+        </div>
+
+
+
     </div>
   );
 };

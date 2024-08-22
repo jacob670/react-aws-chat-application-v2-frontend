@@ -30,9 +30,7 @@ body {
 }
 
 .form {
-  /* border: 1px solid #ccc; */
   padding: 20px;
-  /* background-color: #f9f9f9; */
   display: grid;
   align-items: center;
   flex-direction: column;
