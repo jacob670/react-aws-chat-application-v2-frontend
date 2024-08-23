@@ -58,7 +58,7 @@ const ChatRoom = () => {
 
   const sendMessage = useCallback(() => {
     if (inputMessage && isConnected && stompClient) {
-      const chatMessage = { sender: username, content: inputMessage };
+      const chatMessage = { sender: userName, content: inputMessage };
       stompClient.publish({
         destination: '/app/chat.sendMessage',
         body: JSON.stringify(chatMessage),
@@ -68,32 +68,45 @@ const ChatRoom = () => {
       console.warn('Cannot send message: STOMP client is not connected.');
     }
   }, [inputMessage, username, isConnected, stompClient]);
-
+  
 
 
   return (
     <div class='chat-container'>
 
-      <Link to="/" class='hea'>
+      {/* <Link to="/" class='hea'>
         <h1>QuickChats!</h1>
-      </Link>
+      </Link> */}
 
 
       <div class="chat-box">
         {/* <p>{userName} has joined to chat</p> */}
 
 
-
+        {/* <div class="mes-con">
         {messages.map((message, index) => (
-                  <div class="mes-con">
+          <li>
           <h2>{userName}  
             <p>{message.content}</p>
           </h2>
-          </div>
+          </li>
           ))}
+          </div> */}
 
-          <span class="time-right">Time</span>
 
+        <ul className="chat-list">
+          {messages.map((message, index) => (
+            <li
+              key={index}
+              className={`chat-item ${message.sender === userName ? 'sent' : 'received'}`}
+            >
+              <div className="chat-header">
+                <h2 className="chat-username">{message.sender}</h2>
+              </div>
+              <p className="chat-message">{message.content}</p>
+            </li>
+          ))}
+        </ul>
 
 
 
@@ -104,17 +117,19 @@ const ChatRoom = () => {
 
 
       <div class='input-simple-message'>
-          <input
-            type="text"
-            placeholder="Enter your message"
-            value={inputMessage}
-            onChange={(e) => setInputMessage(e.target.value)}
-          />
+        <input
+          type="text"
+          placeholder="Enter your message"
+          value={inputMessage}
+          onChange={(e) => setInputMessage(e.target.value)}
+        />
 
-          <button onClick={sendMessage}>Send</button>
-        </div>
+        <button onClick={sendMessage}>Send</button>
 
-
+        <Link to="/quickChats">
+          <button>Leave Room</button>
+        </Link>
+      </div>
 
     </div>
   );
