@@ -32,14 +32,14 @@ const AuthenticatedHomePage = () => {
             </div>
 
             <div class='button-container'>
-            <Link to="/chat">
-          <button class="option-butt">Simple Chat Room</button>
+            <Link to="/trendingMovies">
+          <button class="option-butt">Explore Trending Movies</button>
           </Link>
 
 
           <div class="simple-chatroom-description">
-            This simple chat room allows anyone on the site to access it. 
-            In other words, anyone who will click this link can communicate with others on the same link!
+            This link will direct you to a page where trending news and movies will be shown!
+            In other words, get new info on upcoming events!
             </div>
 
 

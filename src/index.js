@@ -26,7 +26,7 @@ root.render(
       {/* Protected Routes */}
       <Route element={<ProtectedRoute />}>
           <Route path="/quickChats" element={<AuthenticatedHomePage />} />
-          <Route path="/chat" element={<ChatRoom />} />
+          <Route path="/trendingMovies" element={<ChatRoom />} />
           {/* Add more protected routes here */}
         </Route>
     </Routes>
