@@ -11,24 +11,51 @@ import axios from 'axios';
 const ChatRoom = () => {
 
   const [movies, setMovies] = useState([]);
+  const [error, setError] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getMovies = async () => {
-      try {
-        const data = await fetchPopularMovies();
-        console.log(data);
-        setMovies(data);
-      } catch (error) {
-        console.error('Error fetching movies:', error);
+    fetch('https://lnqe826bld.execute-api.us-east-2.amazonaws.com/dev/trendingMovies', {
+      method: 'GET'
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    };
+      return response.json();
+    })
+    .then(jsonData => {
+      setMovies(jsonData.results);
+    })
+    .catch(error => {
+      setError(error);
+    })
+    .finally(() => {
+      setLoading(false);
+    });
 
-    getMovies();
+
   }, []);
 
   return (
-    <h1>page</h1>
+    <div className='text'>
+
+<div>
+      <h2>Trending Movies</h2>
+      <div className="movie-list">
+        {movies.map(movie => (
+          <div key={movie.id} className="movie-item">
+
+
+            {/* <p>{movie.title}</p> */}
+          </div>
+        ))}
+      </div>
+    </div>
+
+
+    </div>
+
   );
 };
 
