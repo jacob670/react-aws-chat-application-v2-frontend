@@ -5,5 +5,79 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    text-decoration: none;
+}
+
+.trending-movie-title {
+    color: white;
+    font-family: "Arsenal SC", sans-serif;
+    text-align: center;
+    font-size: 27.5px;
+}
+
+.trending-movie-title-link {
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.trending-movie-title-link:hover {
+    color: black;
+}
+
+.page-info {
+    text-align: center;
+    margin-top: 50px;
+    font-family: "Arsenal SC", sans-serif;
+}
+
+.movie-list {
+    text-align: center;
+}
+
+
+.trending-movie-tit {
+    padding-top: 30px;
+    color: white;
+    font-family: "Arsenal SC", sans-serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-style: bold;
+}
+
+
+.trending-movie-tit a {
+    padding-top: 40px;
+    color: white;
+    font-family: "Arsenal SC", sans-serif;
+    font-size: 28px;
+    font-style: bold;
+    margin-bottom: 40px;
+    text-decoration: none;
+}
+
+.trending-movie-tit a:hover {
+    color: navy;
+}
+
+/* Increase specificity if needed
+.movie-list{
+    width: 200px;
+    height: auto;
+    text-align: center;
+  }
+   */
+  
+
+.specific-overview {
+    color: black;
+    font-size: 30px;
+    font-family: "Arsenal SC", sans-serif;
+}
+
+.specific-date {
+    color: black;
+    font-size: 40px;
+    font-family: "Arsenal SC", sans-serif;
 }

@@ -38,22 +38,41 @@ const ChatRoom = () => {
   }, []);
 
   return (
-    <div className='text'>
+    <div className='trending-movie-container'>
 
-<div>
-      <h2>Trending Movies</h2>
+      <div class='trending-movie-title'>
+        <Link to="/quickChats" class='trending-movie-title-link'>
+          <h2>Trending Movies</h2>
+        </Link>
+      </div>
+
+      <div class='page-info'>
+        <p>Want to get more information on a movie? Just click on the title! Make sure you scroll down!</p>
+      </div>
+
+
+
+
+
       <div className="movie-list">
-        {movies.map(movie => (
+        {movies.map((movie, index) => (
           <div key={movie.id} className="movie-item">
 
 
-            {/* <p>{movie.title}</p> */}
+
+            <div class='trending-movie-tit'>
+            <Link to={`/trendingMovies/${movie.id}`}>
+            <p> {index + 1}) {movie.title}</p>
+            </Link>
+            </div>
+
+            {/* <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+            <p>{movie.title}</p> */}
+
+
           </div>
         ))}
       </div>
-    </div>
-
-
     </div>
 
   );
