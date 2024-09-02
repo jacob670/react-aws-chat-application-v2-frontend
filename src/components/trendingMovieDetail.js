@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
@@ -8,20 +9,17 @@ const MovieDetail = () => {
   const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
   useEffect(() => {
-    
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
-      .then(response => response.json())
-      .then(data => setMovie(data))
-      .catch(error => console.error('Error fetching movie details:', error));
-  }, [id]);
-
-  if (!movie) {
-    return <div>Loading...</div>;
-  }
+    axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
+      .then(response => {
+        setMovie(response.data)
+      })
+      .catch(error => {
+        console.log('error ', error);
+      })
+  }, [])
 
   return (
     <div className="movie-list">
-
 
       <div class='specific-tit'>
         <Link to="/trendingMovies" class='trending-movie-title-link'>

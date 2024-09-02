@@ -13,6 +13,7 @@ import ChatRoom from './components/ChatRoom';
 import AuthenticatedHomePage from './components/AuthenticatedHome';
 import ProtectedRoute from './components/ProtectedRoutes';
 import MovieDetail from './components/trendingMovieDetail'
+import MovieBlog from './components/MovieBlog'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
