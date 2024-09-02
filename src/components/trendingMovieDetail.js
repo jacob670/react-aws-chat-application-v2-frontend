@@ -9,13 +9,17 @@ const MovieDetail = () => {
   const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
   useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
-      .then(response => {
-        setMovie(response.data)
-      })
-      .catch(error => {
-        console.log('error ', error);
-      })
+
+    const getTrendingMovies = async () => {
+      try {
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`);
+        setMovie(response.data); 
+      } catch (error) {
+        console.log('error ', error)
+      }
+    };
+
+    getTrendingMovies();
   }, [])
 
   return (
