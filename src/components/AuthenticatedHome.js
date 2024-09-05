@@ -39,8 +39,7 @@ const AuthenticatedHomePage = () => {
           </Link>
 
           <div class="hover-text">
-            This link will direct you to a page where trending news and movies will be shown!
-            In other words, get new info on upcoming events!
+            Visit this page if you want to go to a page where the latest trending movies will be shown!
           </div>
         </div>
 
@@ -55,8 +54,30 @@ const AuthenticatedHomePage = () => {
           </div>
         </div>
 
+        <div class='button-wrapper'>
+          <Link to="/recomendedMovies">
+            <button class="option-butt">Get Similar Movies to Your Viewing!</button>
+          </Link>
+
+          <div class="hover-text">
+            Find recommended movies based off your movie taste!
+          </div>
+        </div>
+
+{/* 
+        <div class='button-wrapper'>
+          <Link to="/movieBlog">
+            <button class="option-butt">Get Similar Movies to Your Viewing!</button>
+          </Link>
+
+          <div class="hover-text">
+            Find recommended movies based off your movie taste!
+          </div>
+        </div> */}
+
 
       </div>
+      
 
 
     </div>

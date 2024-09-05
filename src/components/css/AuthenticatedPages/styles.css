@@ -6,6 +6,10 @@
     -moz-osx-font-smoothing: grayscale;
     background-color: #8BC6EC;
     background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   
 } 
 
@@ -19,17 +23,6 @@
   text-align: center; 
   padding: 10px; 
 }
-
-/* .button-container {
-  position: fixed;
-  bottom: 50%; 
-  left: 50%;
-  transform: translateX(-50%); 
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  gap: 90px; 
-} */
 
 /*/* From Uiverse.io by vikiWayne */ 
 .option-butt {
@@ -47,19 +40,6 @@
   overflow: hidden;
   outline: 2px solid #2c9caf;
   margin-top: 0px;
-}
-
-.simple-chatroom-description {
-  position: absolute;
-  bottom: -100px; 
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  font-family: "Arsenal SC", sans-serif;
-  font-size: 25px;
-  color:white;
-  width: 1000px;
 }
 
 .button-wrapper {
@@ -96,43 +76,36 @@
   width: 250%;
 }
 
-
-
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Adjust the gap between buttons */
-  /* flex-direction: row; Keep buttons in a row */
-
-
-
   position: fixed;
-  bottom: 50%; 
+  bottom: 20%; 
   left: 50%;
   transform: translateX(-50%); 
   display: flex;
   flex-direction: column; 
   align-items: center; 
-  gap: 90px; 
+  gap: 50px; 
 }
 
 .button-wrapper {
-  text-align: center; /* Center text under the button */
+  text-align: center; 
   position: relative;
 }
 
 
 .hover-text {
-  opacity: 0; /* Initially hide the text */
-  margin-top: 10px; /* Space between button and text */
+  opacity: 0;
+  margin-top: 10px; 
   font-family: "Arsenal SC", sans-serif;
   font-size: 20px;
   color:white;
-  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+  transition: opacity 0.3s ease-in-out; 
 }
 
 .button-wrapper:hover .hover-text {
-  display: block; /* Show the text on hover */
-  opacity: 1; /* Fade in the text on hover */
+  display: block; 
+  opacity: 1; 
 }

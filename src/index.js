@@ -12,8 +12,9 @@ import SignUpConfirmationPage from './components/SignUpConfirmation';
 import ChatRoom from './components/ChatRoom';
 import AuthenticatedHomePage from './components/AuthenticatedHome';
 import ProtectedRoute from './components/ProtectedRoutes';
-import MovieDetail from './components/trendingMovieDetail'
-import MovieBlog from './components/MovieBlog'
+import MovieDetail from './components/trendingMovieDetail';
+import MovieBlog from './components/MovieBlog';
+import RecommendedMovie from './components/RecommendedMovie'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,6 +32,7 @@ root.render(
           <Route path="/trendingMovies" element={<ChatRoom />} />
           <Route path="/trendingMovies/:id" element={<MovieDetail />} />
           <Route path="/movieBlog" element={<MovieBlog />} />
+          <Route path="/recomendedMovies" element={<RecommendedMovie />} />
           {/* Add more protected routes here */}
         </Route>
     </Routes>

@@ -11,3 +11,6 @@ When authenticated, the user will be able to do countless things on the applicat
 - The lambda function calls on The Movie Database API and returns the respsone
 - The route is protected by making sure there is an authorization token in the storage
 - For this simple api, no authorization token is needed to complete the api request with gateway
+
+Search for the movie get the id and then use recommneded movie
+lambda function for reccomendation

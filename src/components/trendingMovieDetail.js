@@ -22,6 +22,10 @@ const MovieDetail = () => {
     getTrendingMovies();
   }, [])
 
+  if (!movie) {
+    return <p>...</p>
+  }
+
   return (
     <div className="movie-list">
 
