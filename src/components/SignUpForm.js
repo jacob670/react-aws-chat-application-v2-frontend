@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './AccountForm.css'
+import './css/AccountForm.css'
 import { Link, useNavigate } from 'react-router-dom';
 
 const SignUpForm = () => {

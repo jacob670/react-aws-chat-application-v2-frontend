@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './SignUpConfirmationCode.css'
+import './css/SignUpConfirmationCode.css'
 import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
-
-
 
 function SignUpConfirmationPage() {
     const location = useLocation();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Home.css'
+import './css/Home.css'
 
 const Home = () => {
     return (

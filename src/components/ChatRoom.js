@@ -50,10 +50,6 @@ const ChatRoom = () => {
         <p>Want to get more information on a movie? Just click on the title! Make sure you scroll down!</p>
       </div>
 
-
-
-
-
       <div className="movie-list">
         {movies.map((movie, index) => (
           <div key={movie.id} className="movie-item">
@@ -65,10 +61,6 @@ const ChatRoom = () => {
             <p> {index + 1}) {movie.title}</p>
             </Link>
             </div>
-
-            {/* <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-            <p>{movie.title}</p> */}
-
 
           </div>
         ))}

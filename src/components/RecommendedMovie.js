@@ -11,17 +11,23 @@ const RecommendedMovie = () => {
         setMovieID(e.target.value);
       };
     
-
-    const handleSearch = async (e) => {
-        setMovieID(e.target.value);
+      const handleSearch = async () => {
+        console.log("Searching for:", movieID); 
 
         try {
-            const response = await axios.post('http://localhost:8083/api/movie/fetchMovieId', { queryString: movieID });
+            const response = await axios.post('http://localhost:8083/api/movie/fetchMovieId', 
+                { queryString: movieID },
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
             console.log(response.data);
-          } catch (error) {
+        } catch (error) {
             console.error('Error fetching movie data:', error);
-          }
-      };
+        }
+    };
     
 
     return (
