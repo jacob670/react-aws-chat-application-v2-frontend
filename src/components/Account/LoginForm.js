@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './css/AccountForm.css'
+import '../css/NonAuthenticatedPages/AccountForm.css'
 import { json, Link, useLocation, useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {

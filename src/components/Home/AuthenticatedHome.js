@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './css/AuthenticatedPages/styles.css';
+import '../css/AuthenticatedPages/styles.css';
 import { json, Link, useLocation, useNavigate } from 'react-router-dom';
-import { getUserName } from './userService';
+import { getUserName } from '../../service/userService';
 
 const AuthenticatedHomePage = () => {
   const [userName, setUserName] = useState('');

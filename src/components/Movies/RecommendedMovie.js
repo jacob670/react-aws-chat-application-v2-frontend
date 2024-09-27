@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './css/AuthenticatedPages/RecommendedMovies.css';
+import '../css/AuthenticatedPages/RecommendedMovies.css';
 import { json, Link, useLocation, useNavigate } from 'react-router-dom';
 
 const RecommendedMovie = () => {
@@ -23,7 +23,7 @@ const RecommendedMovie = () => {
                     }
                 }
             );
-            console.log(response.data);
+            localStorage.setItem("movieSearchID", response.data);
         } catch (error) {
             console.error('Error fetching movie data:', error);
         }

@@ -2,13 +2,13 @@ import React, { useState, useEffect, useCallback } from 'react';
 import SockJS from 'sockjs-client';
 import { Client } from '@stomp/stompjs';
 import { json, Link, useLocation, useNavigate } from 'react-router-dom';
-import { getUserName } from './userService';
+import { getUserName } from '../../service/userService';
 
-import './css/AuthenticatedPages/TrendingMovies.css';
-import { fetchPopularMovies } from '../service/tmdbService'
+import '../css/AuthenticatedPages/TrendingMovies.css';
+import { fetchPopularMovies } from '../../service/tmdbService'
 import axios from 'axios';
 
-const ChatRoom = () => {
+const TrendingMovies = () => {
 
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState([]);
@@ -70,4 +70,4 @@ const ChatRoom = () => {
   );
 };
 
-export default ChatRoom;
+export default TrendingMovies;

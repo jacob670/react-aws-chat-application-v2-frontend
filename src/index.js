@@ -5,16 +5,16 @@ import './styles.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import LoginForm from './components/LoginForm';
-import Home from './components/Home';
-import SignUpForm from './components/SignUpForm';
-import SignUpConfirmationPage from './components/SignUpConfirmation';
-import ChatRoom from './components/ChatRoom';
-import AuthenticatedHomePage from './components/AuthenticatedHome';
+import LoginForm from './components/Account/LoginForm';
+import Home from './components/Home/Home';
+import SignUpForm from './components/Account/SignUpForm';
+import SignUpConfirmationPage from './components/Account/SignUpConfirmation';
+import TrendingMovies from './components/Movies/TrendingMovies';
+import AuthenticatedHomePage from './components/Home/AuthenticatedHome';
 import ProtectedRoute from './components/ProtectedRoutes';
-import MovieDetail from './components/trendingMovieDetail';
-import MovieBlog from './components/MovieBlog';
-import RecommendedMovie from './components/RecommendedMovie'
+import MovieDetail from './components/Movies/trendingMovieDetail';
+import MovieBlog from './components/Movies/MovieBlog';
+import RecommendedMovie from './components/Movies/RecommendedMovie'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,7 +29,7 @@ root.render(
       {/* Protected Routes */}
       <Route element={<ProtectedRoute />}>
           <Route path="/quickChats" element={<AuthenticatedHomePage />} />
-          <Route path="/trendingMovies" element={<ChatRoom />} />
+          <Route path="/trendingMovies" element={<TrendingMovies />} />
           <Route path="/trendingMovies/:id" element={<MovieDetail />} />
           <Route path="/movieBlog" element={<MovieBlog />} />
           <Route path="/recomendedMovies" element={<RecommendedMovie />} />
