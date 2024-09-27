@@ -14,7 +14,8 @@ import AuthenticatedHomePage from './components/Home/AuthenticatedHome';
 import ProtectedRoute from './components/ProtectedRoutes';
 import MovieDetail from './components/Movies/trendingMovieDetail';
 import MovieBlog from './components/Movies/MovieBlog';
-import RecommendedMovie from './components/Movies/RecommendedMovie'
+import RecommendedMovie from './components/Movies/RecommendedMovieID'
+import AllRecommendedMovies from './components/Movies/RecommendedMovies'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -33,6 +34,7 @@ root.render(
           <Route path="/trendingMovies/:id" element={<MovieDetail />} />
           <Route path="/movieBlog" element={<MovieBlog />} />
           <Route path="/recomendedMovies" element={<RecommendedMovie />} />
+          <Route path="/GetAllRecommendedMovies" element={<AllRecommendedMovies />} />
           {/* Add more protected routes here */}
         </Route>
     </Routes>

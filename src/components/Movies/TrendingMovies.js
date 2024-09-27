@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import SockJS from 'sockjs-client';
-import { Client } from '@stomp/stompjs';
 import { json, Link, useLocation, useNavigate } from 'react-router-dom';
 import { getUserName } from '../../service/userService';
 

@@ -6,13 +6,14 @@ import { json, Link, useLocation, useNavigate } from 'react-router-dom';
 const RecommendedMovie = () => {
     const [movieID, setMovieID] = useState('');
     const [mes, setMes] = useState('');
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setMovieID(e.target.value);
       };
     
       const handleSearch = async () => {
-        console.log("Searching for:", movieID); 
+        console.log("Movie Name for Recommendations:", movieID); 
 
         try {
             const response = await axios.post('http://localhost:8083/api/movie/fetchMovieId', 
@@ -24,6 +25,7 @@ const RecommendedMovie = () => {
                 }
             );
             localStorage.setItem("movieSearchID", response.data);
+            navigate('/GetAllRecommendedMovies')
         } catch (error) {
             console.error('Error fetching movie data:', error);
         }
