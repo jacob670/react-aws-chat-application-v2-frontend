@@ -1,5 +1,5 @@
-import { jwtDecode } from 'jwt-decode';
-import React, { useEffect } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import './styles.css';
 
@@ -8,8 +8,8 @@ function App() {
   const confirmationToken = localStorage.getItem("confirmationToken");
   const username = localStorage.getItem("username");
   const location = useLocation();
-    return (
-      <div>
+  return (
+    <div>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/login">LoginForm</Link>
@@ -17,7 +17,7 @@ function App() {
         <Link to="/confirmation">SignupForm</Link>
       </nav>
     </div>
-    );
+  );
 }
 
 export default App;

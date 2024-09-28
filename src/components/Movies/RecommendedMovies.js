@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import '../css/AuthenticatedPages/TrendingMovies.css';
 const AllRecommendedMovies = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-
-        // write api in java to parse and call this aws api to clean the data. then this page will call the java api and display the clean data. to much issues
-
         const fetchMovies = async () => {
             try {
-                const response = await axios.get('https://lnqe826bld.execute-api.us-east-2.amazonaws.com/dev/recommendedMovies', {
+                const response = await axios.get('http://localhost:8083/api/movie/fetchRecommendedMovies', {
                     params: {
                         movieId: localStorage.getItem("movieSearchID")
                     },
                 });
 
-                const data = response.data
-                console.log(data);
-                setMovies(data.movies); // parse the body since it's a string
+                const data = response.data;
+
+                localStorage.setItem('MovieData', JSON.stringify(data));
+                setMovies(data); 
                 
             } catch (error) {
                 console.log("error has occured: ", error);
@@ -38,16 +38,33 @@ const AllRecommendedMovies = () => {
     }
 
     return (
-        <h1>h</h1>
-     
-    //     <div>
-    //     {movies.map((movie, index) => (
-    //         <div key={index}>
-    //             <h3>{movie.title}</h3>
-    //             <p>{movie.year}</p>
-    //         </div>
-    //     ))}
-    // </div>
+
+        <div className='trending-movie-container'>
+
+      <div class='trending-movie-title'>
+        <Link to="/recomendedMovies" class='trending-movie-title-link'>
+          <h2>Recommended Movies</h2>
+        </Link>
+      </div>
+
+      <div class='page-info'>
+        <p>Want to get more information on a movie? Just click on the title! Make sure you scroll down!</p>
+      </div>
+
+      <div className="movie-list">
+        {movies.map((movie, index) => (
+          <div key={movie.id} className="movie-item">
+            <div class='trending-movie-tit'>
+            <Link to={`/GetAllRecommendedMovies/${movie.id}`}>
+            <p> {index + 1}) {movie.title}</p>
+            </Link>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </div>
+
     );
 };
 
