@@ -7,13 +7,14 @@ const Home = () => {
         <div className='home-container'>
 
             <div className='title'>
-                <h1>Welcome to QuickChats!</h1>
+                <h1>Welcome to EasyEntertainment!</h1>
             </div>
 
             <div className='about'>
-                <p>QuickChats is an application that allows users to chat and communicate with each other. The frontend of this app was developed in
-                    framework React.js and the backend with Spring Boot (Java). The backend ultizes bla bla bla so on so on. QuickChats is an application that allows users to chat and communicate with each other. The frontend of this app was developed in
-                    framework React.js and the backend with Spring Boot (Java). The backend ultizes bla bla bla so on so on
+                <p>EasyEntertainment is an application that allows individuals to express their love of movies. The frontend of this app was developed in
+                   React.js and the backend with Spring Boot (Java). AWS services are also included in order to make the application efficient and scalable.
+                   The services used include Cognito, DynamoDB, API Gateway, Lambdas, and IAM. Users in this app can do everything from having a watchlist to getting
+                   movie recommendations!
                 </p>
             </div>
 

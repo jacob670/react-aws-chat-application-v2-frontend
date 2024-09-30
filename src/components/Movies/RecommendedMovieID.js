@@ -10,13 +10,13 @@ const RecommendedMovie = () => {
 
     const handleChange = (e) => {
         setMovieID(e.target.value);
-      };
-    
-      const handleSearch = async () => {
-        console.log("Movie Name for Recommendations:", movieID); 
+    };
+
+    const handleSearch = async () => {
+        console.log("Movie Name for Recommendations:", movieID);
 
         try {
-            const response = await axios.post('http://localhost:8083/api/movie/fetchMovieId', 
+            const response = await axios.post('http://localhost:8083/api/movie/fetchMovieId',
                 { queryString: movieID },
                 {
                     headers: {
@@ -25,12 +25,13 @@ const RecommendedMovie = () => {
                 }
             );
             localStorage.setItem("movieSearchID", response.data);
+            localStorage.setItem("movieTitle", movieID);
             navigate('/GetAllRecommendedMovies')
         } catch (error) {
             console.error('Error fetching movie data:', error);
         }
     };
-    
+
 
     return (
         <div class='rec-container'>
@@ -43,7 +44,7 @@ const RecommendedMovie = () => {
 
             <div class='dir'>
                 <p>Just enter a movie that is similar to what you want to watch!</p>
-                <input class="input" name="text" placeholder="Search..." type="search" value={movieID} onChange={handleChange}/>
+                <input class="input" name="text" placeholder="Search..." type="search" value={movieID} onChange={handleChange} />
 
                 <button type="submit" onClick={handleSearch} >Search For Recommendations!</button>
             </div>

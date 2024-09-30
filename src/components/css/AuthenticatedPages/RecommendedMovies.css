@@ -44,3 +44,29 @@
   input:hover {
     outline: 1px solid lightgrey;
   }
+
+  
+
+
+  .rec-movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .rec-movie-item {
+    text-align: center;
+  }
+  
+  .rec-movie-tit {
+    margin-bottom: 10px;
+  }
+  
+  .rec-movie-poster img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
