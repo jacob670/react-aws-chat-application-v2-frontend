@@ -48,7 +48,7 @@ const TrendingMovies = () => {
         <p>Want to get more information on a movie? Just click on the title! Make sure you scroll down!</p>
       </div>
 
-      <div className="movie-list">
+      {/* <div className="movie-list">
         {movies.map((movie, index) => (
           <div key={movie.id} className="movie-item">
 
@@ -63,7 +63,31 @@ const TrendingMovies = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div> */}
+    {/* Poster view instead of words list */}
+
+          <div className="rec-movie-list">
+        {movies.map((movie, index) => (
+          <div key={movie.id} className="rec-movie-item">
+           
+            <div class='rec-movie-tit'>
+
+              <Link to={`/GetAllRecommendedMovies/${movie.id}`}>
+
+                <div class='rec-movie-poster'>
+                  <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                    style={{ width: '200px', height: 'auto', objectFit: 'cover', textAlign: 'center' }} />
+                </div>
+
+              </Link>
+
+            </div>
+
+          </div>
+        ))}
+      </div>
+      </div>
 
   );
 };

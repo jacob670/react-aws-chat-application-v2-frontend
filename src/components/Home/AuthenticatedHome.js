@@ -43,7 +43,6 @@ const AuthenticatedHomePage = () => {
           </div>
         </div>
 
-
         <div class='button-wrapper'>
           <Link to="/movieBlog">
             <button class="option-butt">Visit Your Movie Blogs and Reviews</button>
@@ -64,17 +63,15 @@ const AuthenticatedHomePage = () => {
           </div>
         </div>
 
-{/* 
         <div class='button-wrapper'>
-          <Link to="/movieBlog">
-            <button class="option-butt">Get Similar Movies to Your Viewing!</button>
+          <Link to="/recomendedMovies">
+            <button class="option-butt">Visit Watchlist!</button>
           </Link>
 
           <div class="hover-text">
-            Find recommended movies based off your movie taste!
+            See the movies you currently have selected to watch!
           </div>
-        </div> */}
-
+        </div>
 
       </div>
       

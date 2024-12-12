@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
 import '../css/AuthenticatedPages/TrendingMovies.css';
+
 const AllRecommendedMovies = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [movies, setMovies] = useState([]);

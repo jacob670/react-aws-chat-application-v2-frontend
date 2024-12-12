@@ -26,6 +26,7 @@ const RecommendedMovie = () => {
             );
             localStorage.setItem("movieSearchID", response.data);
             localStorage.setItem("movieTitle", movieID);
+            
             navigate('/GetAllRecommendedMovies')
         } catch (error) {
             console.error('Error fetching movie data:', error);
